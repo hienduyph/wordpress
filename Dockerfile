@@ -1,7 +1,7 @@
 ARG VERSION=6-php8.1-fpm-alpine
 FROM docker.io/wordpress:${VERSION}
 
-USER ROOT
+USER root
 
 RUN apk add --no-cache --update --virtual buildDeps $PHPIZE_DEPS \
   && pecl install -o -f redis \
